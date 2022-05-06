@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport"
+	content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
+<title>TodoList</title>
+<link rel="stylesheet"
+	href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" />
+</head>
+<body
+	th:style="'background-image:url(' + @{/img/todolist.jpg} + '); background-repeat: no-repeat, repeat; background-size: cover;'">
+	<div class="text-center d-flex align-items-center min-vh-100">
+		<form action="#" th:action="@{/create-account}"
+			th:object="${utilisateur}" method="post" style="margin: 0 auto;">
+
+			<div class="border jumbotron border-secondary p-3 rounded">
+				<p>Créer votre compte</p>
+				<p>
+					<input type="text" name="nom" class="form-control"
+						th:field="*{nom}" placeholder="Nom" required />
+				</p>
+				<p>
+					<input type="text" name="prenom" class="form-control"
+						th:field="*{prenom}" placeholder="Prenom" required />
+				</p>
+				<p>
+					<input type="text" name="identifiant" class="form-control"
+						th:field="*{identifiant}" placeholder="Identifiant" required />
+				</p>
+				<p>
+					<input type="password" name="mdp" class="form-control"
+						th:field="*{mdp}" placeholder="Mot de passe" required />
+				</p>
+				<p>
+					<input type="submit" value="Créer" class="btn btn-primary" />
+				</p>
+			</div>
+		</form>
+	</div>
+</body>
+</html>

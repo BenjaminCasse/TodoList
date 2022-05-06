@@ -1,0 +1,29 @@
+<!doctype html>
+
+<html xmlns:th="http://www.thymeLeaf.org">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport"
+	content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
+<title>TodoList</title>
+<link rel="stylesheet"
+	href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" />
+</head>
+<body
+	th:style="'background-image:url(' + @{/img/todolist.jpg} + '); background-repeat: no-repeat, repeat; background-size: cover;'">
+	<div class="text-center d-flex align-items-center min-vh-100">
+		<div class="jumbotron" style="max-width: 50%; margin: 0 auto;">
+			<p>Compte créé avec succès !</p>
+			<p th:text="${utilisateur.nom}" />
+			<p th:text="${utilisateur.prenom}" />
+			<button id="connexionButton" class="btn btn-primary">Se
+				connecter</button>
+		</div>
+	</div>
+	<script type="text/javascript">
+		document.getElementById("connexionButton").onclick = function() {
+			location.href = "/login";
+		};
+	</script>
+</body>
+</html>
